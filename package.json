@@ -1,0 +1,33 @@
+{
+  "name": "creative-validator",
+  "version": "1.2.4",
+  "description": "Utilities for checking if creatives made with TACTIC™ Creative SDK meet formal requirements",
+  "main": "bin/creative-validator-cli.js",
+  "bin": {
+    "security-validator": "./bin/security-validator-cli.js",
+    "formats-validator": "./bin/formats-validator-cli.js",
+    "preview-validator": "./bin/preview-validator-cli.js",
+    "creative-validator": "./bin/creative-validator-cli.js"
+  },
+  "author": "TACTIC™ Real-Time Marketing",
+  "license": "GPL-3.0-or-later",
+  "repository": "https://bitbucket.org/tactic-realtime/creative-validator",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "commander": "^2.15.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-no-document-cookie": "^0.1.2",
+    "eslint-plugin-no-storage": "^1.0.2",
+    "eslint-plugin-no-unsafe-innerhtml": "^1.0.15",
+    "eslint-plugin-scanjs-rules": "^0.2.1",
+    "eslint-plugin-security": "^1.2.0",
+    "file-exists": "^5.0.1",
+    "http-server": "^0.11.1",
+    "image-size": "^0.6.2",
+    "jsonfile": "^4.0.0",
+    "jsonpath": "^1.0.0",
+    "puppeteer": "^1.2.0",
+    "random-id": "0.0.2",
+    "random-user-agent": "^1.0.0"
+  }
+}

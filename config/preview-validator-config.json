@@ -1,0 +1,12 @@
+{
+	"waitingTime": {
+		"format": 31000,
+		"editor": 5000
+	},
+	"server": {
+		"port": 8000
+	},
+	"puppeteer": {
+		"headless": true
+	}
+}
