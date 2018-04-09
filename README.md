@@ -70,7 +70,7 @@ For example, `./bin/preview-validator-cli.js ../image-text-primitive/`
 
 # Installation as a dependency of creative
 
-Run `npm install git+ssh://git@bitbucket.org/tactic-realtime/creative-validator.git#master` inside directory of creative.
+Run `npm install npm install github:tacticrealtime/creative-validator` inside directory of creative.
 You also might want to consider installing it as a development dependency using `--save-dev` option.
 After installing as a dependency it is possible to run validation with npm scripts.
 For example like this:
@@ -90,6 +90,6 @@ For example like this:
 
 # Development
 
-During development it is more convenient to execute local version (as described in previous paragraph).
+During development it is more convenient to execute local version (as described in [paragraph about local installation and usage](#installation-and-usage-on-linux-local-installation-and-usage)).
 You only need to run `npm install` once - for installing dependencies. If you change only `.js` code and/or `config/*.json` files you don't need to run `npm install` again.
 If you prefer to run global version `npm install -g` then you need to do global install after every change in code or config files.
