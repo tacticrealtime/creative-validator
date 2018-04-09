@@ -11,8 +11,7 @@
 			"scanjs-rules",
 			"no-unsafe-innerhtml",
 			"security",
-			"no-document-cookie",
-			"no-storage"
+			"no-document-cookie"
 		],
 		"extends": [
 			"plugin:security/recommended"
@@ -73,7 +72,6 @@
 			"security/detect-object-injection": 0,
 			"no-unsafe-innerhtml/no-unsafe-innerhtml": 0,
 
-			"no-storage/no-browser-storage": 2,
 			"no-document-cookie/no-document-cookie": 2
 		}
 	}
