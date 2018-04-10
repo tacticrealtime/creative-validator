@@ -1,7 +1,6 @@
 # Description
 
 This is collection of utilities designed for partially automate process of checking third party creatives.
-Read more about ideas behind this tool here: [Automation process to check creative](https://netron.atlassian.net/wiki/spaces/TT/pages/170098705/Automation+process+to+check+creatives)
 
 # Installation:
 
@@ -50,6 +49,18 @@ This utility doesn't scan creative for viruses or any kinds of malicious code.
 ### Feeds validation
 This utility cannot be used to make sure that external resources is not used in feeds. Feed can contain anything and it can be dynamic. Feed domain though (https://feed.trtm.io) is not included into wh
 
+# Security validation
+
+## Usage
+
+`security-validator [path]`
+
+Specify path to directory where creative is unzipped (manifest.json must be here). By default current path is used.
+
+## What it does
+
+Utility checks on given path javascript files for some basic security issues.
+
 # Full validation
 
 For running all included validators you can run the following command:
@@ -87,6 +98,10 @@ For example like this:
 
 }
 ```
+
+# Validation errors
+
+More detailed description of validation errors can be found on [errors page](Errors.md)
 
 # Development
 
