@@ -92,6 +92,7 @@ For example like this:
 
     "validate": "./node_modules/creative-validator/bin/creative-validator-cli.js -p ./preview.html",
     "validate-formats": "./node_modules/creative-validator/bin/formats-validator-cli.js",
+    "validate-security": "./node_modules/creative-validator/bin/security-validator-cli.js",
     "validate-preview": "./node_modules/creative-validator/bin/preview-validator-cli.js -p ./preview.html",
 
 ...
@@ -99,9 +100,19 @@ For example like this:
 }
 ```
 
+Then you can run the following commands inside creative directory:
+
+`npm run validate` for full validation
+
+`npm run validate-formats` for formats validation
+
+`npm run validate-security` for security validation
+
+`npm run validate-preview` for preview validation
+
 # Validation errors
 
-More detailed description of validation errors can be found on [errors page](Errors.md)
+More detailed description of validation errors can be found on [errors page](ERROR_LIST.md)
 
 # Development
 
