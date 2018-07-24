@@ -1,0 +1,130 @@
+{
+  "title": "JSON schema for TACTIC™ Manifest.json validation",
+  "description": "Validates the minimal valid manifest.json (Draft v7)",
+  "type": "object",
+  "additionalProperties": false,
+  "required":["type","version","author","brand","name","created","updated","editor","sizes","data"],
+  "errorMessage": {
+    "type": "\"manifest.json\" must be an object.",
+    "required": {
+      "type": "Manifest's property 'type' is missing.",
+      "version": "Manifest's property 'version' is missing.",
+      "author": "Manifest's property 'author' is missing.",
+      "brand": "Manifest's property 'brand' is missing.",
+      "name": "Manifest's property 'name' is missing.",
+      "created": "Manifest's property 'created' is missing.",
+      "updated": "Manifest's property 'updated' is missing.",
+      "editor": "Manifest's property 'editor' is missing.",
+      "sizes": "Manifest's property 'sizes' is missing.",
+      "data": "Manifest's property 'data' is missing."
+    }
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "MANIFEST",
+      "errorMessage": {
+        "type": "Manifest's property 'type' must be a string.",
+        "const": "Manifest's property 'type' must be \"MANIFEST\"."
+      }
+    },
+    "version": {
+      "type": ["number", "string"],
+      "minimum": 1,
+      "pattern": "^[1-9]\\d*(?:\\.\\d{1,2})?\\s*$",
+      "errorMessage": {
+        "type": "Manifest's property 'version' must be a numeric string or a number.",
+        "minimum": "Manifest's property 'version' must be greater than 1.",
+        "pattern": "Manifest's property 'version' must be greater than 1 (decimal precision of 2)."
+      }
+    },
+    "author": {
+      "type": "string",
+      "errorMessage": {
+        "type": "Manifest's property 'author' must be a string."
+      }
+    },
+    "brand": {
+      "type": "string",
+      "errorMessage": {
+        "type": "Manifest's property 'brand' must be a string."
+      }
+    },
+    "name": {
+      "type": "string",
+      "errorMessage": {
+        "type": "Manifest's property 'name' must be a string."
+      }
+    },
+    "created": {
+      "type": "string",
+      "pattern": "^(?:(?:31(\\\/)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\\/)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)\\d{2})$|^(?:29(\\\/)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\\/)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)\\d{2})$",
+      "errorMessage": {
+        "type": "Manifest's property 'created' must be a string.",
+        "pattern": "Manifest's property 'created' must match DD/MM/YYYY format."
+      }
+    },
+    "updated": {
+      "type": "string",
+      "pattern": "^(?:(?:31(\\\/)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\\/)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)\\d{2})$|^(?:29(\\\/)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\\/)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)\\d{2})$",
+      "errorMessage": {
+        "type": "Manifest's property 'updated' must be a string.",
+        "pattern": "Manifest's property 'updated' must match DD/MM/YYYY format."
+      }
+    },
+    "editor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required":["url","version"],
+      "errorMessage": {
+        "type": "Manifest's property 'editor' must be an object.",
+        "required": {
+          "url": "Editor's property 'url' is missing.",
+          "version": "Editor's property 'version' is missing."
+        }
+      },
+      "properties": {
+        "url": {
+          "type": "string",
+          "additionalProperties": false,
+          "pattern": "^.*\\.(html)$",
+          "errorMessage": {
+            "type": "Editor's property 'url' must be a string.",
+            "pattern": "Editor's property 'url' must lead to .html file."
+          }
+        },
+        "version": {
+          "type": ["number", "string"],
+          "additionalProperties": false,
+          "minimum": 1,
+          "pattern": "^[1-9]\\d*(?:\\.\\d{1,2})?\\s*$",
+          "errorMessage": {
+            "type": "Editor's property 'version' must be a numeric string or a number.",
+            "minimum": "Editor's property 'version' must be greater than 1.",
+            "pattern": "Editor's property 'version' must be greater than 1 (decimal precision of 2)."
+          }
+        }
+      }
+    },
+    "sizes": {
+      "type": "array",
+      "errorMessage": {
+        "type": "Manifest's property 'sizes' must be an array."
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "errorMessage": {
+          "type": "Manifest's property 'sizes' must contain an object."
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "errorMessage": {
+        "type": "Manifest's property 'data' must be an object."
+      }
+    }
+  }
+}
