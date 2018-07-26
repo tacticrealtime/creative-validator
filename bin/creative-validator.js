@@ -3,11 +3,13 @@
 
 const program         = require('commander');
 const schemaValidator = require('../lib/formats-validator-v2.0');
+const securityValidator = require('../lib/security-validator-v2.0');
 
 let errors = [];
 
 const format = function (allErrors) {
 	let messages = [];
+
 	allErrors.forEach(function (validatorErrors) {
 		validatorErrors.forEach(function (error) {
 			messages.push(JSON.stringify({message: error}));
@@ -33,5 +35,6 @@ else {
 }
 
 errors.push(schemaValidator.validatePath(path, debug));
+errors.push(securityValidator.validatePath(path, debug));
 
 format(errors);
