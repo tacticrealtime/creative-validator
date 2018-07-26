@@ -4,6 +4,7 @@
 const program         = require('commander');
 const schemaValidator = require('../lib/formats-validator-v2.0');
 const securityValidator = require('../lib/security-validator-v2.0');
+const previewValidator = require('../lib/preview-validator-v2.0');
 
 let errors = [];
 
@@ -37,4 +38,15 @@ else {
 errors.push(schemaValidator.validatePath(path, debug));
 errors.push(securityValidator.validatePath(path, debug));
 
-format(errors);
+let isEmpty = a => Array.isArray(a) && a.every(isEmpty);
+
+if (isEmpty(errors)) {
+	previewValidator.validatePath(path, program.previewPage, debug).then(function (e) {
+		errors.push(e);
+		format(errors);
+	});
+}
+else{
+	format(errors);
+}
+
