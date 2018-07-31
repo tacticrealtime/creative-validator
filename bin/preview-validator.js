@@ -2,9 +2,7 @@
 'use strict';
 
 const program = require('commander');
-const formatsValidator = require('../lib/formats-validator');
-const previewValidator = require('../lib/preview-validator');
-const securityValidator = require('../lib/security-validator');
+const previewValidator = require('../lib/preview-validator-v2.0');
 
 program
 	.version(require('../package.json').version)
@@ -15,6 +13,4 @@ program
 
 const path = program.args.shift() || '.';
 
-formatsValidator.validatePath(path);
-securityValidator.validatePath(path);
-previewValidator.validatePath(path, program.previewPage);
+previewValidator.validatePath(path, program.previewPage, true);

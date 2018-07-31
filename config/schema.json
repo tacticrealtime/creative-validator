@@ -17,7 +17,8 @@
       "editor": "Manifest's property 'editor' is missing.",
       "sizes": "Manifest's property 'sizes' is missing.",
       "data": "Manifest's property 'data' is missing."
-    }
+    },
+    "additionalProperties": "\"manifest.json\" must not contain any additional properties."
   },
   "properties": {
     "type": {
@@ -81,12 +82,12 @@
         "required": {
           "url": "Editor's property 'url' is missing.",
           "version": "Editor's property 'version' is missing."
-        }
+        },
+        "additionalProperties": "Property 'editor' must not contain any additional properties."
       },
       "properties": {
         "url": {
           "type": "string",
-          "additionalProperties": false,
           "pattern": "^.*\\.(html)$",
           "errorMessage": {
             "type": "Editor's property 'url' must be a string.",
@@ -95,7 +96,6 @@
         },
         "version": {
           "type": ["number", "string"],
-          "additionalProperties": false,
           "minimum": 1,
           "pattern": "^[1-9]\\d*(?:\\.\\d{1,2})?\\s*$",
           "errorMessage": {

@@ -2,7 +2,7 @@
 'use strict';
 
 const program = require('commander');
-const securityValidator = require('../lib/security-validator');
+const securityValidator = require('../lib/security-validator-v2.0');
 
 program
 	.version(require('../package.json').version)
@@ -12,4 +12,4 @@ program
 
 const path = program.args.shift() || '.';
 
-securityValidator.validatePath(path);
+securityValidator.validatePath(path, true);

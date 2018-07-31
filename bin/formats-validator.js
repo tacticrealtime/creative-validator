@@ -2,7 +2,7 @@
 'use strict';
 
 const program = require('commander');
-const formatsValidator = require('../lib/formats-validator');
+const schemaValidator = require('../lib/formats-validator-v2.0');
 
 program
 	.version(require('../package.json').version)
@@ -12,4 +12,4 @@ program
 
 const path = program.args.shift() || '.';
 
-formatsValidator.validatePath(path);
+schemaValidator.validatePath(path, true);

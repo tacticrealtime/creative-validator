@@ -20,6 +20,7 @@ Specify path to directory where creative is unzipped (manifest.json must be here
 Utility checks on given path:
 
 1. manifest.json existence
+2. validates manifest.json through JSON Schema
 2. sizes section in manifest existence
 3. files specified in "index" property of each size all exist too
 4. static fallback is specified for each size and file on given path exists
@@ -65,11 +66,12 @@ Utility checks on given path javascript files for some basic security issues.
 
 For running all included validators you can run the following command:
 
-`creative-validator [path] [-p [path to custom preview page]]`
+`creative-validator [path] [-p [path to custom preview page]] debug`
 
 Specify path to directory where creative is unzipped (manifest.json must be here). By default current path is used.
 With `-p` option it is possible to use custom preview page instead of standard preview.html included into validator.
 When formats validator finds error further validation is stopped. When preview validator finds error validation continues.
+Debug argument must be included in order to view log messages in the command-line interface.
 
 # Installation and usage on Linux (local installation and usage)
 
@@ -90,10 +92,10 @@ For example like this:
 
 ...
 
-    "validate": "./node_modules/creative-validator/bin/creative-validator-cli.js -p ./preview.html",
-    "validate-formats": "./node_modules/creative-validator/bin/formats-validator-cli.js",
-    "validate-security": "./node_modules/creative-validator/bin/security-validator-cli.js",
-    "validate-preview": "./node_modules/creative-validator/bin/preview-validator-cli.js -p ./preview.html",
+    "validate": "./node_modules/creative-validator/bin/creative-validator.js -p ./preview.html debug",
+    "validate-formats": "./node_modules/creative-validator/bin/formats-validator.js",
+    "validate-security": "./node_modules/creative-validator/bin/security-validator.js",
+    "validate-preview": "./node_modules/creative-validator/bin/preview-validator.js -p ./preview.html",
 
 ...
 

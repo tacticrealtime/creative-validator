@@ -1,13 +1,13 @@
 {
   "name": "creative-validator",
-  "version": "1.2.5",
+  "version": "1.3.0",
   "description": "Utilities for checking if creatives made with TACTIC™ Creative SDK meet formal requirements",
-  "main": "bin/creative-validator-cli.js",
+  "main": "bin/creative-validator.js",
   "bin": {
-    "security-validator": "./bin/security-validator-cli.js",
-    "formats-validator": "./bin/formats-validator-cli.js",
-    "preview-validator": "./bin/preview-validator-cli.js",
-    "creative-validator": "./bin/creative-validator-cli.js"
+    "security-validator": "./bin/security-validator.js",
+    "formats-validator": "./bin/formats-validator.js",
+    "preview-validator": "./bin/preview-validator.js",
+    "creative-validator": "./bin/creative-validator.js"
   },
   "author": "TACTIC™ Real-Time Marketing",
   "license": "GPL-3.0-or-later",
