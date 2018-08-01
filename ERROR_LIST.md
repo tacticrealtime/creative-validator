@@ -289,7 +289,7 @@ It doesn't provide any guarantees and still require human to do code review for 
 ### error happen at the page: ... / pageerror occurred: ...
 
 Any javascript erros occured during test run in headless Google Chrome browser will be printed here.
-Please use browser console for debugging.
+Please use browser console for debugging. Make sure your manifest.json is valid.
 
 ### Detected request to disallowed domain: example.com
 

@@ -25,13 +25,25 @@ Utility checks on given path:
 3. files specified in "index" property of each size all exist too
 4. static fallback is specified for each size and file on given path exists
 
+# Security validation
+
+## Usage
+
+`./bin/security-validator.js [path]`
+
+Specify path to directory where creative is unzipped (manifest.json must be here). By default current path is used.
+
+## What it does
+
+Utility checks on given path javascript files for some basic security issues.
+
 # Preview validator
 
 ## Usage
 
 `./bin/preview-validator.js [path]`
 
-Specify path to directory where creative is unzipped (manifest.json must be here). By default current path is used.
+Specify path to directory where creative is unzipped (manifest.json must be here). By default current path is used. Make sure you run preview validator only when manifest.json is valid.
 
 ## What it does
 
@@ -44,22 +56,10 @@ Then it waits for 30 seconds **for each format** and logs the following:
 ## What it doesn't
 
 ### Scan for malicious code
-This utility doesn't scan creative for viruses or any kinds of malicious code. 
+This utility doesn't scan creative for viruses or any kinds of malicious code.
 
 ### Feeds validation
 This utility cannot be used to make sure that external resources is not used in feeds. Feed can contain anything and it can be dynamic. Feed domain though (https://feed.trtm.io) is not included into wh
-
-# Security validation
-
-## Usage
-
-`./bin/security-validator.js [path]`
-
-Specify path to directory where creative is unzipped (manifest.json must be here). By default current path is used.
-
-## What it does
-
-Utility checks on given path javascript files for some basic security issues.
 
 # Full validation
 
