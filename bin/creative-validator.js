@@ -11,11 +11,16 @@ let errors = [];
 const format = function (allErrors) {
 	let messages = [];
 
-	allErrors.forEach(function (validatorErrors) {
-		validatorErrors.forEach(function (error) {
-			messages.push(JSON.stringify({message: error}));
+	try {
+		allErrors.forEach(function (validatorErrors) {
+			validatorErrors.forEach(function (error) {
+				messages.push(JSON.stringify({message: error}));
+			});
 		});
-	});
+	}
+	catch (e) {
+		messages.push(JSON.stringify({message: 'Validator error. Please contact support.'}));
+	}
 	console.log(messages.join());
 };
 

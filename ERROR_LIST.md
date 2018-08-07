@@ -198,7 +198,11 @@ Please check "sizes" property in manifest.json - it must be an array.
 
 ### One or more formats are empty or not objects!
 
-Please check "sizes" field in manifest.json - it must contain only objects.
+Please check "sizes" property in manifest.json - it must contain only objects.
+
+### Could not validate formats.
+
+Please check "sizes" property in manifest.json - it must contain a valid object.
 
 ### One or more sizes have empty or missing names!
 
