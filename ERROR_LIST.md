@@ -232,10 +232,18 @@ Please check that html file specified in "index" property exists.
 
 Please check that format's file is a '.html' file.
 
-### "NNN" format's fallback path is missing or is not a string.
+### "NNN" format's 'fallback' property is missing.
 
 Each object in "sizes" must contain "fallback" property.
-This property is an object with string property "static" with relative path to html of this specific format.
+
+### "NNN" format's 'fallback' object is missing 'static' property.
+
+Each object in "sizes" must contain "fallback" object with "static" string property.
+
+### "NNN" format's fallback 'static' property is not a string.
+
+Each object in "sizes" must contain "fallback" object with "static" string property.
+This string must be a relative path to fallback image of this specific format.
 
 ### "NNN" format's fallback file is not found!
 
