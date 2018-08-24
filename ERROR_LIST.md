@@ -220,6 +220,10 @@ Currently only values "STATIC" and "ADAPTIVE" for "type" field are supported.
 
 Each object in "sizes" must contain "width" and "height" number properties.
 
+### "NNN" format's dimension is an empty string!
+
+Each object in "sizes" must contain "width" and "height" number properties.
+
 ### "NNN" format's property 'index' is missing or is not a string.
 
 Each object in "sizes" must contain "index" string property with relative path to html of this specific format.
