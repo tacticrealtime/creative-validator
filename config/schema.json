@@ -125,6 +125,101 @@
       "errorMessage": {
         "type": "Manifest's property 'data' must be an object."
       }
+    },
+
+    "brandmaster": {
+      "type": "object",
+      "errorMessage": {
+        "type": "Manifest's property 'brandmaster' must be a object."
+      },
+      "properties": {
+        "templateGroups": {
+          "type": "boolean",
+          "errorMessage": {
+            "type": "Manifest's property 'brandmaster.templateGroups' must be a a boolean."
+          }
+        }
+      }
+    },
+
+    "macros": {
+      "type": "array",
+      "items": [{
+        "type": "object",
+        "required":["name","type"],
+        "errorMessage": {
+          "type": "Manifest's property 'editor' must be an object.",
+          "required": {
+            "name": "Macros property 'name' is missing.",
+            "type": "Macros property 'type' is missing."
+          },
+          "additionalProperties": "Property 'editor' must not contain any additional properties."
+        },
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^\\$\\{[^\\}]+\\}$",
+            "errorMessage": {
+              "type": "Manifest's property 'macros.name' must be a string.",
+              "pattern": "Manifest's property 'macros.name' must look like $ {some_macro_name} (without spaces)."
+            }
+          },
+
+          "type": {
+            "type": "string",
+            "enum": ["text", "textArea"],
+            "errorMessage": {
+              "type": "Manifest's property 'macros.type' must be a string.",
+              "enum": "Manifest's property 'macros.type' must one of following: text, textArea."
+            }
+          }
+          
+        }
+      }]
+    },
+
+    "assets": {
+      "type": "array",
+      "errorMessage": {
+        "type": "Manifest's property 'assets' must be an array."
+      },
+      "items": [{
+        "type": "object",
+        "required": ["urls"],
+        "properties": {
+          "urls": {
+            "type": "array",
+            "items": [{"type": "string"}],
+            "errorMessage": {
+              "type": "Manifest's property 'assets.urls' must be an array."
+            }
+          },
+          "matches": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "required": ["type", "value"],
+                "errorMessage": {
+                  "type": "Manifest's property 'assets.urls' must be an array.",
+                  "required": {
+                    "type": "Manifest's property 'assets.matches.type' is missing.",
+                    "value": "Manifest's property 'assets.matches.value' is missing."
+                  }
+                },
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }]
     }
   }
 }
