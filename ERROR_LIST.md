@@ -214,7 +214,7 @@ Each object in "sizes" array must have "type" string field.
 
 ### "NNN" format's property 'type' is "XYZ" which is not supported!
 
-Currently only values "STATIC" and "ADAPTIVE" for "type" field are supported.
+Only values "FIXED", "RESPONSIVE" and "PREVIEW" for "type" field are supported.
 
 ### "NNN" format's dimensions are missing!
 
