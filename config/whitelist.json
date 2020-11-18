@@ -1,10 +1,10 @@
 [
 	"localhost",
+	"app.tacticrealtime.com",
+	"cdn.app.tacticrealtime.com",
 	"crv-sdk.trtm.io",
+	"crv-res.trtm.io",
 	"ajax.googleapis.com",
 	"fonts.gstatic.com",
-	"fonts.googleapis.com",
-	"crv-res.trtm.io",
-	"cdn.app.tacticrealtime.com",
-	"app.tacticrealtime.com"
+	"fonts.googleapis.com"
 ]
