@@ -1,225 +1,225 @@
 {
-  "title": "JSON schema for TACTIC™ Manifest.json validation",
-  "description": "Validates the minimal valid manifest.json (Draft v7)",
-  "type": "object",
-  "additionalProperties": false,
-  "required":["type","version","author","brand","name","created","updated","editor","sizes","data"],
-  "errorMessage": {
-    "type": "\"manifest.json\" must be an object.",
-    "required": {
-      "type": "Manifest's property 'type' is missing.",
-      "version": "Manifest's property 'version' is missing.",
-      "author": "Manifest's property 'author' is missing.",
-      "brand": "Manifest's property 'brand' is missing.",
-      "name": "Manifest's property 'name' is missing.",
-      "created": "Manifest's property 'created' is missing.",
-      "updated": "Manifest's property 'updated' is missing.",
-      "editor": "Manifest's property 'editor' is missing.",
-      "sizes": "Manifest's property 'sizes' is missing.",
-      "data": "Manifest's property 'data' is missing."
-    },
-    "additionalProperties": "\"manifest.json\" must not contain any additional properties."
-  },
-  "properties": {
-    "type": {
-      "type": "string",
-      "const": "MANIFEST",
-      "errorMessage": {
-        "type": "Manifest's property 'type' must be a string.",
-        "const": "Manifest's property 'type' must be \"MANIFEST\"."
-      }
-    },
-    "version": {
-      "type": ["number", "string"],
-      "minimum": 1,
-      "pattern": "^[1-9]\\d*(?:\\.\\d{1,2})?\\s*$",
-      "errorMessage": {
-        "type": "Manifest's property 'version' must be a numeric string or a number.",
-        "minimum": "Manifest's property 'version' must be greater than 1.",
-        "pattern": "Manifest's property 'version' must be greater than 1 (decimal precision of 2)."
-      }
-    },
-    "author": {
-      "type": "string",
-      "errorMessage": {
-        "type": "Manifest's property 'author' must be a string."
-      }
-    },
-    "brand": {
-      "type": "string",
-      "errorMessage": {
-        "type": "Manifest's property 'brand' must be a string."
-      }
-    },
-    "name": {
-      "type": "string",
-      "errorMessage": {
-        "type": "Manifest's property 'name' must be a string."
-      }
-    },
-    "created": {
-      "type": "string",
-      "pattern": "^(?:(?:31(\\\/)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\\/)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)\\d{2})$|^(?:29(\\\/)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\\/)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)\\d{2})$",
-      "errorMessage": {
-        "type": "Manifest's property 'created' must be a string.",
-        "pattern": "Manifest's property 'created' must match DD/MM/YYYY format."
-      }
-    },
-    "updated": {
-      "type": "string",
-      "pattern": "^(?:(?:31(\\\/)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\\/)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)\\d{2})$|^(?:29(\\\/)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\\/)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)\\d{2})$",
-      "errorMessage": {
-        "type": "Manifest's property 'updated' must be a string.",
-        "pattern": "Manifest's property 'updated' must match DD/MM/YYYY format."
-      }
-    },
-    "editor": {
-      "type": "object",
-      "additionalProperties": false,
-      "required":["url","version"],
-      "errorMessage": {
-        "type": "Manifest's property 'editor' must be an object.",
-        "required": {
-          "url": "Editor's property 'url' is missing.",
-          "version": "Editor's property 'version' is missing."
-        },
-        "additionalProperties": "Property 'editor' must not contain any additional properties."
+    "title": "JSON schema for TACTIC™ Manifest.json validation",
+    "description": "Validates the minimal valid manifest.json (Draft v7)",
+    "type": "object",
+    "additionalProperties": false,
+    "required":["type","version","author","brand","name","created","updated","editor","sizes","data"],
+    "errorMessage": {
+      "type": "\"manifest.json\" must be an object.",
+      "required": {
+        "type": "Manifest's property 'type' is missing.",
+        "version": "Manifest's property 'version' is missing.",
+        "author": "Manifest's property 'author' is missing.",
+        "brand": "Manifest's property 'brand' is missing.",
+        "name": "Manifest's property 'name' is missing.",
+        "created": "Manifest's property 'created' is missing.",
+        "updated": "Manifest's property 'updated' is missing.",
+        "editor": "Manifest's property 'editor' is missing.",
+        "sizes": "Manifest's property 'sizes' is missing.",
+        "data": "Manifest's property 'data' is missing."
       },
-      "properties": {
-        "url": {
-          "type": "string",
-          "pattern": "^.*\\.(html)$",
-          "errorMessage": {
-            "type": "Editor's property 'url' must be a string.",
-            "pattern": "Editor's property 'url' must lead to .html file."
-          }
-        },
-        "version": {
-          "type": ["number", "string"],
-          "minimum": 1,
-          "pattern": "^[1-9]\\d*(?:\\.\\d{1,2})?\\s*$",
-          "errorMessage": {
-            "type": "Editor's property 'version' must be a numeric string or a number.",
-            "minimum": "Editor's property 'version' must be greater than 1.",
-            "pattern": "Editor's property 'version' must be greater than 1 (decimal precision of 2)."
-          }
-        }
-      }
+      "additionalProperties": "\"manifest.json\" must not contain any additional properties."
     },
-    "sizes": {
-      "type": "array",
-      "errorMessage": {
-        "type": "Manifest's property 'sizes' must be an array."
-      },
-      "items": {
-        "type": "object",
-        "additionalProperties": true,
+    "properties": {
+      "type": {
+        "type": "string",
+        "const": "MANIFEST",
         "errorMessage": {
-          "type": "Manifest's property 'sizes' must contain an object."
+          "type": "Manifest's property 'type' must be a string.",
+          "const": "Manifest's property 'type' must be \"MANIFEST\"."
         }
-      }
-    },
-    "data": {
-      "type": "object",
-      "additionalProperties": true,
-      "errorMessage": {
-        "type": "Manifest's property 'data' must be an object."
-      }
-    },
-
-    "brandmaster": {
-      "type": "object",
-      "errorMessage": {
-        "type": "Manifest's property 'brandmaster' must be a object."
       },
-      "properties": {
-        "templateGroups": {
-          "type": "boolean",
-          "errorMessage": {
-            "type": "Manifest's property 'brandmaster.templateGroups' must be a a boolean."
-          }
+      "version": {
+        "type": ["number", "string"],
+        "minimum": 1,
+        "pattern": "^[1-9]\\d*(?:\\.\\d{1,2})?\\s*$",
+        "errorMessage": {
+          "type": "Manifest's property 'version' must be a numeric string or a number.",
+          "minimum": "Manifest's property 'version' must be greater than 1.",
+          "pattern": "Manifest's property 'version' must be greater than 1 (decimal precision of 2)."
         }
-      }
-    },
-
-    "macros": {
-      "type": "array",
-      "items": [{
+      },
+      "author": {
+        "type": "string",
+        "errorMessage": {
+          "type": "Manifest's property 'author' must be a string."
+        }
+      },
+      "brand": {
+        "type": "string",
+        "errorMessage": {
+          "type": "Manifest's property 'brand' must be a string."
+        }
+      },
+      "name": {
+        "type": "string",
+        "errorMessage": {
+          "type": "Manifest's property 'name' must be a string."
+        }
+      },
+      "created": {
+        "type": "string",
+        "pattern": "^(?:(?:31(\\\/)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\\/)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)\\d{2})$|^(?:29(\\\/)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\\/)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)\\d{2})$",
+        "errorMessage": {
+          "type": "Manifest's property 'created' must be a string.",
+          "pattern": "Manifest's property 'created' must match DD/MM/YYYY format."
+        }
+      },
+      "updated": {
+        "type": "string",
+        "pattern": "^(?:(?:31(\\\/)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\\/)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)\\d{2})$|^(?:29(\\\/)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\\/)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)\\d{2})$",
+        "errorMessage": {
+          "type": "Manifest's property 'updated' must be a string.",
+          "pattern": "Manifest's property 'updated' must match DD/MM/YYYY format."
+        }
+      },
+      "editor": {
         "type": "object",
-        "required":["name","type"],
+        "additionalProperties": false,
+        "required":["url","version"],
         "errorMessage": {
           "type": "Manifest's property 'editor' must be an object.",
           "required": {
-            "name": "Macros property 'name' is missing.",
-            "type": "Macros property 'type' is missing."
+            "url": "Editor's property 'url' is missing.",
+            "version": "Editor's property 'version' is missing."
           },
           "additionalProperties": "Property 'editor' must not contain any additional properties."
         },
         "properties": {
-          "name": {
+          "url": {
             "type": "string",
-            "pattern": "^\\$\\{[^\\}]+\\}$",
+            "pattern": "^.*\\.(html)$",
             "errorMessage": {
-              "type": "Manifest's property 'macros.name' must be a string.",
-              "pattern": "Manifest's property 'macros.name' must look like $ {some_macro_name} (without spaces)."
+              "type": "Editor's property 'url' must be a string.",
+              "pattern": "Editor's property 'url' must lead to .html file."
             }
           },
-
-          "type": {
-            "type": "string",
-            "enum": ["text", "textArea"],
+          "version": {
+            "type": ["number", "string"],
+            "minimum": 1,
+            "pattern": "^[1-9]\\d*(?:\\.\\d{1,2})?\\s*$",
             "errorMessage": {
-              "type": "Manifest's property 'macros.type' must be a string.",
-              "enum": "Manifest's property 'macros.type' must one of following: text, textArea."
+              "type": "Editor's property 'version' must be a numeric string or a number.",
+              "minimum": "Editor's property 'version' must be greater than 1.",
+              "pattern": "Editor's property 'version' must be greater than 1 (decimal precision of 2)."
             }
           }
-          
         }
-      }]
-    },
-
-    "assets": {
-      "type": "array",
-      "errorMessage": {
-        "type": "Manifest's property 'assets' must be an array."
       },
-      "items": [{
+      "sizes": {
+        "type": "array",
+        "errorMessage": {
+          "type": "Manifest's property 'sizes' must be an array."
+        },
+        "items": {
+          "type": "object",
+          "additionalProperties": true,
+          "errorMessage": {
+            "type": "Manifest's property 'sizes' must contain an object."
+          }
+        }
+      },
+      "data": {
         "type": "object",
-        "required": ["urls"],
+        "additionalProperties": true,
+        "errorMessage": {
+          "type": "Manifest's property 'data' must be an object."
+        }
+      },
+  
+      "brandmaster": {
+        "type": "object",
+        "errorMessage": {
+          "type": "Manifest's property 'brandmaster' must be a object."
+        },
         "properties": {
-          "urls": {
-            "type": "array",
-            "items": [{"type": "string"}],
+          "templateGroups": {
+            "type": "boolean",
             "errorMessage": {
-              "type": "Manifest's property 'assets.urls' must be an array."
+              "type": "Manifest's property 'brandmaster.templateGroups' must be a a boolean."
             }
+          }
+        }
+      },
+  
+      "macros": {
+        "type": "array",
+        "items": [{
+          "type": "object",
+          "required":["name","type"],
+          "errorMessage": {
+            "type": "Manifest's property 'editor' must be an object.",
+            "required": {
+              "name": "Macros property 'name' is missing.",
+              "type": "Macros property 'type' is missing."
+            },
+            "additionalProperties": "Property 'editor' must not contain any additional properties."
           },
-          "matches": {
-            "type": "array",
-            "items": [
-              {
-                "type": "object",
-                "required": ["type", "value"],
-                "errorMessage": {
-                  "type": "Manifest's property 'assets.urls' must be an array.",
-                  "required": {
-                    "type": "Manifest's property 'assets.matches.type' is missing.",
-                    "value": "Manifest's property 'assets.matches.value' is missing."
-                  }
-                },
-                "properties": {
-                  "type": {
-                    "type": "string"
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "^\\$\\{[^\\}]+\\}$",
+              "errorMessage": {
+                "type": "Manifest's property 'macros.name' must be a string.",
+                "pattern": "Manifest's property 'macros.name' must look like $ {some_macro_name} (without spaces)."
+              }
+            },
+  
+            "type": {
+              "type": "string",
+              "enum": ["text", "textArea"],
+              "errorMessage": {
+                "type": "Manifest's property 'macros.type' must be a string.",
+                "enum": "Manifest's property 'macros.type' must one of following: text, textArea."
+              }
+            }
+            
+          }
+        }]
+      },
+  
+      "assets": {
+        "type": "array",
+        "errorMessage": {
+          "type": "Manifest's property 'assets' must be an array."
+        },
+        "items": [{
+          "type": "object",
+          "required": ["urls"],
+          "properties": {
+            "urls": {
+              "type": "array",
+              "items": [{"type": "string"}],
+              "errorMessage": {
+                "type": "Manifest's property 'assets.urls' must be an array."
+              }
+            },
+            "matches": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "required": ["type", "value"],
+                  "errorMessage": {
+                    "type": "Manifest's property 'assets.urls' must be an array.",
+                    "required": {
+                      "type": "Manifest's property 'assets.matches.type' is missing.",
+                      "value": "Manifest's property 'assets.matches.value' is missing."
+                    }
                   },
-                  "value": {
-                    "type": "string"
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
                   }
                 }
-              }
-            ]
+              ]
+            }
           }
-        }
-      }]
+        }]
+      }
     }
   }
-}
