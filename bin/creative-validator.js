@@ -12,8 +12,8 @@ const format = function (allErrors) {
   let messages = [];
 
   try {
-    allErrors.forEach(function (validatorErrors) {
-      validatorErrors.forEach(function (error) {
+    if (Array.isArray(allErrors)) allErrors.forEach(function (validatorErrors) {
+      if (Array.isArray(validatorErrors)) validatorErrors.forEach(function (error) {
         messages.push(JSON.stringify({ message: error }));
       });
     });

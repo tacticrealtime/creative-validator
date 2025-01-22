@@ -2,8 +2,8 @@
     "title": "JSON schema for TACTIC™ Manifest.json validation",
     "description": "Validates the minimal valid manifest.json (Draft v7)",
     "type": "object",
-    "additionalProperties": false,
-    "required":["type","version","author","brand","name","created","updated","editor","sizes","data"],
+    "additionalProperties": true,
+    "required":["type","version","author","brand","name","created","updated","editor","sizes","exports","data"],
     "errorMessage": {
       "type": "\"manifest.json\" must be an object.",
       "required": {
